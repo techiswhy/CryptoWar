@@ -1,21 +1,36 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Моё Телега-приложение</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  </head>
-  <body>
-    <h1>Привет из Telegram Web App!</h1>
-    <button onclick="sendData()">Отправить</button>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoWar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="profile" class="page active">
+      <div class="avatar-container">
+        <img src="https://via.placeholder.com/100" id="avatar" class="avatar" alt="avatar" />
+        <h2 id="nickname">@username</h2>
+        <p id="balance">Баланс: 1000 TON</p>
+      </div>
+    </div>
 
-    <script>
-      function sendData() {
-        Telegram.WebApp.sendData("Какие-то данные отсюда"); // отправляет данные обратно в бот
-        Telegram.WebApp.close(); // закрывает Web App
-      }
+    <div id="rating" class="page">
+      <h2>Рейтинг</h2>
+    </div>
 
-      Telegram.WebApp.expand(); // делает окно на весь экран
-    </script>
-  </body>
+    <div id="duel" class="page">
+      <h2>Дуэль</h2>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button onclick="switchPage('profile')">Профиль</button>
+    <button onclick="switchPage('rating')">Рейтинг</button>
+    <button onclick="switchPage('duel')">Дуэль</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
 </html>
