@@ -1,0 +1,137 @@
+/* Базовые стили для всех устройств */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Черный фон */
+    color: #fff; /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /* Занимаем всю высоту экрана */
+}
+
+.container {
+    text-align: center;
+    flex-grow: 1; /* Контейнер расширяется, чтобы занять оставшееся пространство */
+    padding: 20px;
+}
+
+/* Стили для мобильных устройств (ширина экрана до 600px) */
+@media (max-width: 600px) {
+    .button-container {
+        display: flex;
+        flex-direction: row; /* Кнопки в ряд */
+        justify-content: space-evenly; /* Равномерное распределение кнопок */
+        position: fixed;
+        bottom: 20px; /* Фиксируем кнопки внизу экрана */
+        width: 100%;
+        padding: 10px;
+        background-color: #1a1a1a; /* Черный фон */
+        z-index: 10;
+    }
+
+    .btn {
+        width: auto;
+        padding: 15px 30px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        background-color: #333; /* Серый цвет */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+        background-color: #555; /* Светлый серый при наведении */
+        transform: scale(1.05); /* Легкое увеличение при наведении */
+    }
+}
+
+/* Стили для планшетов и десктопов (ширина экрана от 601px до 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .button-container {
+        display: flex;
+        flex-direction: row; /* Кнопки в ряд */
+        justify-content: space-evenly;
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #1a1a1a;
+    }
+
+    .btn {
+        padding: 20px;
+        font-size: 18px;
+    }
+}
+
+/* Стили для широких экранов (ширина экрана более 1024px) */
+@media (min-width: 1025px) {
+    .button-container {
+        display: flex;
+        flex-direction: row; /* Кнопки в ряд */
+        justify-content: space-evenly;
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #1a1a1a;
+    }
+
+    .btn {
+        padding: 20px;
+        font-size: 24px;
+    }
+}
+
+/* Кнопки */
+.btn {
+    background-color: #555; /* Серый цвет */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* При наведении */
+.btn:hover {
+    background-color: #777; /* Светлый серый при наведении */
+    transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
+}
+
+/* Добавление анимации при нажатии */
+.btn:active {
+    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+}
+
+/* Добавление тени для кнопок */
+.btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для текста внутри кнопок */
+.btn span {
+    font-weight: bold;
+}
+
+/* Стили для контейнера с кнопками */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a;
+    z-index: 10;
+}
