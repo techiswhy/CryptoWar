@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CryptoWar</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoWar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div id="profile" class="page active">
-      <div class="avatar-container">
-        <img src="https://via.placeholder.com/100" id="avatar" class="avatar" alt="avatar" />
-        <h2 id="nickname">@username</h2>
-        <p id="balance">Баланс: 1000 TON</p>
-      </div>
+    <div class="container">
+        <header>
+            <h1>Добро пожаловать в CryptoWar!</h1>
+        </header>
+        <main>
+            <section class="intro">
+                <p>Ваши победы и поражения в мире криптовалютных дуэлей.</p>
+                <a href="/profile/123456" class="btn">Перейти в профиль</a>
+            </section>
+            <section class="ranking">
+                <h2>Топ 10 игроков</h2>
+                <ul id="ranking-list">
+                    <!-- Сюда будут вставляться данные -->
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>CryptoWar — игра на криптовалютах</p>
+        </footer>
     </div>
 
-    <div id="rating" class="page">
-      <h2>Рейтинг</h2>
-    </div>
-
-    <div id="duel" class="page">
-      <h2>Дуэль</h2>
-    </div>
-  </div>
-
-  <nav class="bottom-nav">
-    <button onclick="switchPage('profile')">Профиль</button>
-    <button onclick="switchPage('rating')">Рейтинг</button>
-    <button onclick="switchPage('duel')">Дуэль</button>
-  </nav>
-
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
