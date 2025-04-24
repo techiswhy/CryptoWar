@@ -11,95 +11,35 @@ body {
     height: 100vh; /* Занимаем всю высоту экрана */
 }
 
-.container {
-    text-align: center;
-    flex-grow: 1; /* Контейнер расширяется, чтобы занять оставшееся пространство */
-    padding: 20px;
+/* Контейнер для кнопок */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(10px); /* Добавим эффект размытия фона */
+    z-index: 10;
+    border-radius: 20px 20px 0 0; /* Скругление верхних углов */
 }
 
-/* Стили для мобильных устройств (ширина экрана до 600px) */
-@media (max-width: 600px) {
-    .button-container {
-        display: flex;
-        flex-direction: row; /* Кнопки в ряд */
-        justify-content: space-evenly; /* Равномерное распределение кнопок */
-        position: fixed;
-        bottom: 20px; /* Фиксируем кнопки внизу экрана */
-        width: 100%;
-        padding: 10px;
-        background-color: #1a1a1a; /* Черный фон */
-        z-index: 10;
-    }
-
-    .btn {
-        width: auto;
-        padding: 15px 30px;
-        margin: 5px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        background-color: #333; /* Серый цвет */
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn:hover {
-        background-color: #555; /* Светлый серый при наведении */
-        transform: scale(1.05); /* Легкое увеличение при наведении */
-    }
-}
-
-/* Стили для планшетов и десктопов (ширина экрана от 601px до 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .button-container {
-        display: flex;
-        flex-direction: row; /* Кнопки в ряд */
-        justify-content: space-evenly;
-        position: fixed;
-        bottom: 20px;
-        width: 100%;
-        padding: 10px;
-        background-color: #1a1a1a;
-    }
-
-    .btn {
-        padding: 20px;
-        font-size: 18px;
-    }
-}
-
-/* Стили для широких экранов (ширина экрана более 1024px) */
-@media (min-width: 1025px) {
-    .button-container {
-        display: flex;
-        flex-direction: row; /* Кнопки в ряд */
-        justify-content: space-evenly;
-        position: fixed;
-        bottom: 20px;
-        width: 100%;
-        padding: 10px;
-        background-color: #1a1a1a;
-    }
-
-    .btn {
-        padding: 20px;
-        font-size: 24px;
-    }
-}
-
-/* Кнопки */
+/* Стили для кнопок */
 .btn {
     background-color: #555; /* Серый цвет */
     color: white;
     border: none;
     border-radius: 15px;
-    padding: 15px 30px;
-    margin: 15px;
-    font-size: 20px;
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 18px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px; /* Устанавливаем минимальную ширину кнопки */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
 /* При наведении */
@@ -108,14 +48,9 @@ body {
     transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
 }
 
-/* Добавление анимации при нажатии */
+/* Анимация при нажатии */
 .btn:active {
     transform: scale(0.95); /* Уменьшение кнопки при нажатии */
-}
-
-/* Добавление тени для кнопок */
-.btn {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Стили для текста внутри кнопок */
@@ -123,15 +58,42 @@ body {
     font-weight: bold;
 }
 
-/* Стили для контейнера с кнопками */
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    padding: 10px;
-    background-color: #1a1a1a;
-    z-index: 10;
+/* Стили для мобильных устройств (ширина экрана до 600px) */
+@media (max-width: 600px) {
+    .button-container {
+        flex-wrap: wrap; /* Делаем кнопки более гибкими, чтобы они не выходили за экран */
+        justify-content: center;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        width: 100%; /* Кнопки будут занимать всю доступную ширину */
+        margin: 10px 0;
+    }
+}
+
+/* Стили для планшетов и десктопов (ширина экрана от 601px до 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .button-container {
+        flex-wrap: wrap; /* Делаем кнопки гибкими */
+        justify-content: center;
+    }
+
+    .btn {
+        width: 30%; /* Ограничиваем ширину кнопок */
+        margin: 10px;
+    }
+}
+
+/* Стили для широких экранов (ширина экрана более 1024px) */
+@media (min-width: 1025px) {
+    .button-container {
+        flex-wrap: wrap; /* Делаем кнопки гибкими */
+        justify-content: center;
+    }
+
+    .btn {
+        width: 20%; /* Ограничиваем ширину кнопок */
+        margin: 10px;
+    }
 }
